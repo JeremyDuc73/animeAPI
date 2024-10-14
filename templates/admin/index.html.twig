@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panel Admin{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="mt-5 mb-5">Panel Admin</h1>
+        <div>
+            {% for user in users %}
+                {% if 'ROLE_ADMIN' not in user.roles %}
+                    <div class="d-flex align-items-center">
+                        <p class="me-4">{{ user.username }}</p>
+                        {% if user.status %}
+                            <a class="btn btn-danger" href="">DESACTIVER LE COMPTE</a>
+                        {% else %}
+                            <a class="btn btn-success" href="">ACTIVER LE COMPTE</a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+
+{% endblock %}
