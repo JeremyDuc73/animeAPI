@@ -3,5 +3,272 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-    <h1>Documentation</h1>
+    <div class="container">
+        <h1 class="mt-4 mb-4">Documentation Anime API</h1>
+        <h2 class="mt-5">AUTHENTICATION</h2>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/register</u></h5>
+            <h6>Type de route : POST</h6>
+            <h6>Exemple de corps de requête : <br>
+                <code>
+                    { <br>
+                    "username":"jeremy", <br>
+                    "password":"coucou" <br>
+                    } <br><br>
+                </code>
+            </h6>
+            <p>Réponse valide : <br></p>
+            <code>
+                []
+            </code>
+        </div>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/api/login-check</u></h5>
+            <h6>Type de route : POST</h6>
+            <h6>Exemple de corps de requête : <br>
+                <code>
+                    { <br>
+                    "username":"jeremy", <br>
+                    "password":"coucou" <br>
+                    } <br><br>
+                </code>
+            </h6>
+            <p>Réponse valide : <br></p>
+            <code>
+                token : "in3oaaca..."
+            </code>
+        </div>
+
+        <h2 class="mt-5">GENRES</h2>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/api/genres</u></h5>
+            <h6>Type de route : GET</h6>
+
+            <p>Réponse valide : <br></p>
+            <code>
+                { <br>
+                "id":1,<br>
+                "name":"adventure",<br>
+                "author": <br>
+                &nbsp;{<br>
+                &nbsp;&nbsp;"id":1,<br>
+                &nbsp;&nbsp;"username":"jeremy"<br>
+                &nbsp;}<br>
+                }
+            </code>
+        </div>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/api/genre/add</u></h5>
+            <h6>Type de route : POST</h6>
+            <h6>Exemple de corps de requête : <br>
+                <code>
+                    { <br>
+                    "name":"action" <br>
+                    } <br><br>
+                </code>
+            </h6>
+            <p>Réponse valide : <br></p>
+            <code>
+                { <br>
+                "id":1,<br>
+                "name":"adventure",<br>
+                "author": <br>
+                &nbsp;{<br>
+                &nbsp;&nbsp;"id":1,<br>
+                &nbsp;&nbsp;"username":"jeremy"<br>
+                &nbsp;}<br>
+                }
+            </code>
+        </div>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/api/genre/{id}/edit</u></h5>
+            <h6>Type de route : PUT</h6>
+            <h6>Exemple de corps de requête : <br>
+                <code>
+                    { <br>
+                    "name":"romance" <br>
+                    } <br><br>
+                </code>
+            </h6>
+            <p>Réponse valide : <br></p>
+            <code>
+                "Genre Edited"
+            </code>
+        </div>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/api/genre/{id}/delete</u></h5>
+            <h6>Type de route : DELETE</h6>
+            <p>Réponse valide : <br></p>
+            <code>
+                "Genre Deleted"
+            </code>
+        </div>
+
+        <h2 class="mt-5">STUDIOS</h2>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/api/studios</u></h5>
+            <h6>Type de route : GET</h6>
+
+            <p>Réponse valide : <br></p>
+            <code>
+                { <br>
+                "id":1,<br>
+                "name":"ufotable",<br>
+                "entryAuthor": <br>
+                &nbsp;{<br>
+                &nbsp;&nbsp;"id":1,<br>
+                &nbsp;&nbsp;"username":"jeremy"<br>
+                &nbsp;}<br>
+                }
+            </code>
+        </div>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/api/studio/add</u></h5>
+            <h6>Type de route : POST</h6>
+            <h6>Exemple de corps de requête : <br>
+                <code>
+                    { <br>
+                    "name":"ufotable" <br>
+                    } <br><br>
+                </code>
+            </h6>
+            <p>Réponse valide : <br></p>
+            <code>
+                { <br>
+                "id":1,<br>
+                "name":"ufotable",<br>
+                "entryAuthor": <br>
+                &nbsp;{<br>
+                &nbsp;&nbsp;"id":1,<br>
+                &nbsp;&nbsp;"username":"jeremy"<br>
+                &nbsp;}<br>
+                }
+            </code>
+        </div>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/api/studio/{id}/edit</u></h5>
+            <h6>Type de route : PUT</h6>
+            <h6>Exemple de corps de requête : <br>
+                <code>
+                    { <br>
+                    "name":"ghibli" <br>
+                    } <br><br>
+                </code>
+            </h6>
+            <p>Réponse valide : <br></p>
+            <code>
+                "Studio Edited"
+            </code>
+        </div>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/api/studio/{id}/delete</u></h5>
+            <h6>Type de route : DELETE</h6>
+            <p>Réponse valide : <br></p>
+            <code>
+                "Studio Deleted"
+            </code>
+        </div>
+        <h2 class="mt-5">ANIMES</h2>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/api/animes</u></h5>
+            <h6>Type de route : GET</h6>
+
+            <p>Réponse valide : <br></p>
+            <code>
+                [<br>
+                &nbsp;{ <br>
+                &nbsp;"id":1,<br>
+                &nbsp;"name":"Dan Da Dan",<br>
+                &nbsp;"numberOfEpisodes":2,<br>
+                &nbsp;"entryAuthor": <br>
+                &nbsp;&nbsp;{<br>
+                &nbsp;&nbsp;&nbsp;"id":1,<br>
+                &nbsp;&nbsp;&nbsp;"username":"jeremy"<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;"genres": [<br>
+                &nbsp;&nbsp;{<br>
+                &nbsp;&nbsp;&nbsp;"id":1,<br>
+                &nbsp;&nbsp;&nbsp;"name":"romance"<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;]<br>
+                &nbsp;"studio":<br>
+                &nbsp;&nbsp;{<br>
+                &nbsp;&nbsp;&nbsp;"id":1,<br>
+                &nbsp;&nbsp;&nbsp;"name":"ufotable"<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;}<br>
+                ]
+            </code>
+        </div>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/api/anime/add</u></h5>
+            <h6>Type de route : POST</h6>
+            <h6>Exemple de corps de requête : <br>
+                <code>
+                    {<br>
+                    &nbsp;"name": "Dan Da Dan",<br>
+                    &nbsp;"numberOfEpisodes": 2,<br>
+                    &nbsp;"genres": [<br>
+                    &nbsp;&nbsp;"romance"<br>
+                    &nbsp;],<br>
+                    &nbsp;"studio" : "ghibli"<br>
+                    }
+                </code>
+            </h6>
+            <p>Réponse valide : <br></p>
+            <code>
+                [<br>
+                &nbsp;{ <br>
+                &nbsp;"id":1,<br>
+                &nbsp;"name":"Dan Da Dan",<br>
+                &nbsp;"numberOfEpisodes":2,<br>
+                &nbsp;"entryAuthor": <br>
+                &nbsp;&nbsp;{<br>
+                &nbsp;&nbsp;&nbsp;"id":1,<br>
+                &nbsp;&nbsp;&nbsp;"username":"jeremy"<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;"genres": [<br>
+                &nbsp;&nbsp;{<br>
+                &nbsp;&nbsp;&nbsp;"id":1,<br>
+                &nbsp;&nbsp;&nbsp;"name":"romance"<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;]<br>
+                &nbsp;"studio":<br>
+                &nbsp;&nbsp;{<br>
+                &nbsp;&nbsp;&nbsp;"id":1,<br>
+                &nbsp;&nbsp;&nbsp;"name":"ufotable"<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;}<br>
+                ]
+            </code>
+        </div>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/api/anime/{id}/edit</u></h5>
+            <h6>Type de route : PUT</h6>
+            <h6>Exemple de corps de requête : <br>
+                <code>
+                    {<br>
+                    &nbsp;"name": "Dan Da Dan",<br>
+                    &nbsp;"numberOfEpisodes": 2,<br>
+                    &nbsp;"genres": [<br>
+                    &nbsp;&nbsp;"romance"<br>
+                    &nbsp;],<br>
+                    &nbsp;"studio" : "ghibli"<br>
+                    }
+                </code>
+            </h6>
+            <p>Réponse valide : <br></p>
+            <code>
+                "Anime Edited"
+            </code>
+        </div>
+        <div class="border border-dark p-3 m-3">
+            <h5><u>https://anime-api.jeremyduc.com/api/anime/{id}/delete</u></h5>
+            <h6>Type de route : DELETE</h6>
+            <p>Réponse valide : <br></p>
+            <code>
+                "Anime Deleted"
+            </code>
+        </div>
+    </div>
 {% endblock %}

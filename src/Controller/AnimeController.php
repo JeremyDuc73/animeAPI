@@ -8,6 +8,7 @@ use App\Entity\Studio;
 use App\Repository\AnimeRepository;
 use App\Repository\GenreRepository;
 use App\Repository\StudioRepository;
+use App\Service\StatusCheckerService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

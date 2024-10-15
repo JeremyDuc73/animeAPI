@@ -22,11 +22,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['anime', 'genre'])]
+    #[Groups(['anime', 'genre', 'studio'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 180)]
-    #[Groups(['anime', 'genre'])]
+    #[Groups(['anime', 'genre', 'studio'])]
     private ?string $username = null;
 
     /**
@@ -108,7 +108,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        // $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
     }

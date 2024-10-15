@@ -29,6 +29,7 @@ class Studio
 
     #[ORM\ManyToOne(inversedBy: 'studios')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['studio'])]
     private ?User $entryAuthor = null;
 
     public function __construct()

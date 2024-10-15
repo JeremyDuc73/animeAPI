@@ -11,9 +11,9 @@
                     <div class="d-flex align-items-center">
                         <p class="me-4">{{ user.username }}</p>
                         {% if user.status %}
-                            <a class="btn btn-danger" href="">DESACTIVER LE COMPTE</a>
+                            <a class="btn btn-danger" href="{{ path('app_change_account_status', {id:user.id}) }}">DESACTIVER LE COMPTE</a>
                         {% else %}
-                            <a class="btn btn-success" href="">ACTIVER LE COMPTE</a>
+                            <a class="btn btn-success" href="{{ path('app_change_account_status', {id:user.id}) }}">ACTIVER LE COMPTE</a>
                         {% endif %}
                     </div>
                 {% endif %}
